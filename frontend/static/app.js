@@ -2,7 +2,7 @@ document.getElementById("voting-form").addEventListener("submit", async function
   e.preventDefault();
   const votes = document.getElementById("votes").value;
   const messages = document.getElementById("messages");
-  messages.innerHTML += `<p>🔁 Iniciando proceso de votación con ${votes} intento(s)...</p>`;
+  messages.innerHTML = "";  // limpia antes de mostrar
 
   const res = await fetch("/votar", {
     method: "POST",
@@ -11,5 +11,14 @@ document.getElementById("voting-form").addEventListener("submit", async function
   });
 
   const data = await res.json();
-  messages.innerHTML += `<p>${data.mensaje}</p>`;
+
+  if (data.logs && Array.isArray(data.logs)) {
+    data.logs.forEach(msg => {
+      const p = document.createElement("p");
+      p.textContent = msg;
+      messages.appendChild(p);
+    });
+  } else {
+    messages.innerHTML += `<p>${data.mensaje}</p>`;
+  }
 });
