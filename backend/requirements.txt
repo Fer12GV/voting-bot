@@ -1,0 +1,4 @@
+#  Dependencias backend
+# Versión Python 3.11.13
+Flask==2.3.3
+playwright==1.44.0

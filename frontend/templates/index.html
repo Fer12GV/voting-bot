@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSV-TECH Voting Bot</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🗳️ LSV-TECH Voting Bot</h1>
+    <form id="voting-form">
+      <label for="votes">¿Cuántas veces deseas votar?</label>
+      <input type="number" id="votes" name="votes" min="1" value="1" required>
+      <button type="submit">Iniciar votación</button>
+    </form>
+    <div id="status-box">
+      <h2>🪄 Estado del Bot</h2>
+      <div id="messages"></div>
+    </div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

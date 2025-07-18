@@ -205,3 +205,27 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+########################
+
+# Python
+*.py[cod]
+*.pyo
+*.pyd
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Pytest
+*.py,cover
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
