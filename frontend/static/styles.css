@@ -18,3 +18,14 @@ body {
 #status-box {
   margin-top: 20px;
 }
+#loading-gif {
+  text-align: center;
+  margin-top: 20px;
+}
+#loading-gif img {
+  width: 120px; /* Puedes cambiarlo a 150px, 200px, etc. */
+}
+.hidden {
+  display: none;
+}
+

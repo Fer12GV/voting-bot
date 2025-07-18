@@ -14,11 +14,18 @@
       <input type="number" id="votes" name="votes" min="1" value="1" required>
       <button type="submit">Iniciar votación</button>
     </form>
+
+    <!-- GIF que aparece mientras se ejecuta el proceso -->
+    <div id="loading-gif" class="hidden">
+      <img src="/static/airplane.gif" alt="Cargando...">
+    </div>
+
     <div id="status-box">
       <h2>🪄 Estado del Bot</h2>
       <div id="messages"></div>
     </div>
   </div>
+
   <script src="/static/app.js"></script>
 </body>
 </html>
