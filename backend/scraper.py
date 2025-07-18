@@ -3,12 +3,12 @@ import asyncio
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
 from constants import *
 
-async def votar(playwright, intento, logs):
+async def votar(playwright, intento, total, logs):
     def log(msg):
         print(msg)
         logs.append(msg)
 
-    log(f"\n🔁 Intento {intento + 1} de {VOTE_ATTEMPTS}")
+    log(f"\n🔁 Intento {intento + 1} de {total}")
     browser = await playwright.chromium.launch(headless=True)
     context = await browser.new_context()
     page = await context.new_page()
@@ -67,6 +67,6 @@ async def ejecutar_votaciones(intentos):
     logs.append(f"🚀 Iniciando proceso de votación con {intentos} intento(s)...")
     async with async_playwright() as playwright:
         for i in range(intentos):
-            await votar(playwright, i, logs)
+            await votar(playwright, i, intentos, logs)
     logs.append("✅ Todos los intentos finalizados.")
     return logs
